@@ -5,13 +5,14 @@ import assert from 'assert';
 import objectToGetParams from './utils/objectToGetParams';
 import createShareButton from './utils/createShareButton';
 
-function facebookLink(url, { quote, hashtag }) {
+function facebookLink(url, { quote, hashtag, appId }) {
   assert(url, 'facebook.url');
 
   return 'https://www.facebook.com/sharer/sharer.php' + objectToGetParams({
     u: url,
     quote,
     hashtag,
+    app_id: appId,
   });
 }
 
@@ -34,10 +35,12 @@ const FacebookShareButton = createShareButton('facebook', facebookLink, (props) 
   return {
     quote: props.quote,
     hashtag: props.hashtag,
+    appId: props.appId,
   };
 }, {
   quote: PropTypes.string,
   hashtag: PropTypes.string,
+  appId: PropTypes.string,
 }, {
   windowWidth: 550,
   windowHeight: 400,
