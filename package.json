@@ -1,5 +1,5 @@
 {
-  "name": "react-share",
+  "name": "@lvelours/react-share",
   "version": "2.2.0",
   "description": "Social media share buttons and share counts for React.",
   "main": "./lib/index.js",
